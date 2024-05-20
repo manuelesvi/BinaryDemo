@@ -16,7 +16,7 @@ Console.Read();
 
 string Imprime(Digitos digitos) => string.Format(
     "decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
-    Convert.ToString((int)digitos, toBase: 2),
-        (int)digitos, // 1 = decimal, 0 = binario
-    Convert.ToString((int)digitos, toBase: 8),
-    Convert.ToString((int)digitos, toBase: 16));
+    Convert.ToString((int)digitos, toBase: 2), // binary
+        (int)digitos,                          // decimal
+    Convert.ToString((int)digitos, toBase: 8), // octal
+    Convert.ToString((int)digitos, toBase: 16)); // hexadecimal
