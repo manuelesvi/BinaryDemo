@@ -14,7 +14,8 @@ Console.WriteLine("Press any key to continue...");
 Console.Read();
 
 
-string Imprime(Digitos digitos) => string.Format("decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
+string Imprime(Digitos digitos) => string.Format(
+    "decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
     Convert.ToString((int)digitos, toBase: 2), (int)digitos,
     Convert.ToString((int)digitos, toBase: 8),
     Convert.ToString((int)digitos, toBase: 16));
