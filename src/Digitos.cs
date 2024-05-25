@@ -1,4 +1,5 @@
-﻿public enum Digitos
+﻿[Flags]
+public enum Digitos
 {
     Zero = 0,
     One = 1,

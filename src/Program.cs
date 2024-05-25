@@ -1,4 +1,6 @@
-﻿Console.WriteLine(Imprime(Digitos.Zero));
+﻿using System.Diagnostics;
+
+Console.WriteLine(Imprime(Digitos.Zero));
 Console.WriteLine(Imprime(Digitos.One));
 Console.WriteLine(Imprime(Digitos.Two));
 Console.WriteLine(Imprime(Digitos.Three));
@@ -10,11 +12,26 @@ Console.WriteLine(Imprime(Digitos.Eight));
 Console.WriteLine(Imprime(Digitos.Nine));
 Console.WriteLine(Imprime(Digitos.Ten));
 Console.WriteLine(Imprime(Digitos.Eleven));
-Console.WriteLine("Press any key to continue...");
-Console.Read();
+Pause();
 
+var digits = Digitos.One
+    | Digitos.Two
+    | Digitos.Five; // 10011 - dec: 19, octal: 23, hex = 13
 
-string Imprime(Digitos digitos) => string.Format("decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
+Console.WriteLine(Imprime(digits));
+Trace.Assert((int)digits == 19,
+    "unexpected quantity for digits, expected = 19");
+
+Pause();
+
+string Imprime(Digitos digitos) => string.Format(
+    "decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
     Convert.ToString((int)digitos, toBase: 2), (int)digitos,
     Convert.ToString((int)digitos, toBase: 8),
     Convert.ToString((int)digitos, toBase: 16));
+
+void Pause()
+{
+    Console.WriteLine("Press any key to continue...");
+    Console.Read();
+}
