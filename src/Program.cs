@@ -26,12 +26,7 @@ Pause();
 
 string Imprime(Digitos digitos) => string.Format(
     "decimal: {1}, binario: {0}, octal: {2}, hexadecimal: {3}",
-    Convert.ToString((int)digitos, toBase: 2), (int)digitos,
-    Convert.ToString((int)digitos, toBase: 8),
-    Convert.ToString((int)digitos, toBase: 16));
-
-void Pause()
-{
-    Console.WriteLine("Press any key to continue...");
-    Console.Read();
-}
+    Convert.ToString((int)digitos, toBase: 2), // binary
+        (int)digitos,                          // decimal
+    Convert.ToString((int)digitos, toBase: 8), // octal
+    Convert.ToString((int)digitos, toBase: 16)); // hexadecimal
